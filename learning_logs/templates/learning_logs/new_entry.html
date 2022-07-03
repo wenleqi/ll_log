@@ -1,0 +1,21 @@
+{% extends 'learning_logs/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条目添加</title>
+</head>
+<body>
+    <P>
+        <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+    </P>
+    <P>添加新条目:</P>
+    <form action="{% url 'learning_logs:new_entry' topic.id%}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="subit">添加条目</button>
+    </form>
+</body>
+</html>
+{% endblock content %}

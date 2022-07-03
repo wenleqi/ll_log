@@ -1,0 +1,15 @@
+<!--extends继承父模版-->
+{% extends 'learning_logs/base.html' %}
+{% block header %}
+    <div class="jumbotron">
+        <h1>学习轨迹</h1>
+    </div>
+{% endblock header %}
+{% block content %}
+    <h2>
+        <a href="{% url 'users:register' %}">注册一个账户,记录你的学习主题和心得</a>
+    </h2>
+    <h2>
+        学习新主题，记录心得
+    </h2>
+{% endblock content %}
